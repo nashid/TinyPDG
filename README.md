@@ -3,6 +3,12 @@ TinyPDG
 
 A library for building intraprocedural PDGs for Java programs
 
+
+TinyPDG is a library for building control flow graphs (CFGs) and program dependency graphs (PDGs) from Java source code. It also includes functionality to detect code clones by using the built PDGs. 
+
+
+
+
 **How to run?**
 
 - Command line arguments:
