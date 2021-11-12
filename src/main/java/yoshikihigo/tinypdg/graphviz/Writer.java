@@ -31,13 +31,10 @@ import yoshikihigo.tinypdg.pdg.edge.PDGControlDependenceEdge;
 import yoshikihigo.tinypdg.pdg.edge.PDGDataDependenceEdge;
 import yoshikihigo.tinypdg.pdg.edge.PDGEdge;
 import yoshikihigo.tinypdg.pdg.edge.PDGExecutionDependenceEdge;
-import yoshikihigo.tinypdg.pdg.node.PDGControlNode;
-import yoshikihigo.tinypdg.pdg.node.PDGMethodEnterNode;
-import yoshikihigo.tinypdg.pdg.node.PDGNode;
-import yoshikihigo.tinypdg.pdg.node.PDGNodeFactory;
-import yoshikihigo.tinypdg.pdg.node.PDGParameterNode;
+import yoshikihigo.tinypdg.pdg.node.*;
 import yoshikihigo.tinypdg.pe.MethodInfo;
 import yoshikihigo.tinypdg.pe.ProgramElementInfo;
+import yoshikihigo.tinypdg.pe.StatementInfo;
 
 public class Writer {
 
@@ -284,7 +281,12 @@ public class Writer {
 			writer.write(".");
 			writer.write(Integer.toString(entry.getValue()));
 			writer.write(" [style = filled, label = \"");
-			writer.write(entry.getKey().getText().replace("\"", "\\\"")
+
+			String nodeInfo = entry.getKey().getText();
+			String category = getCategory(entry);
+			nodeInfo = nodeInfo + " " + ", category = " + category;
+
+			writer.write(nodeInfo.replace("\"", "\\\"")
 					.replace("\\\\\"", "\\\\\\\""));
 			writer.write("\"");
 
@@ -335,6 +337,19 @@ public class Writer {
 
 		writer.write("}");
 		writer.newLine();
+	}
+
+	private static String getCategory(Map.Entry<PDGNode<?>, Integer> entry) {
+		String category = "";
+		if(entry.getKey() instanceof PDGStatementNode) {
+			PDGStatementNode statementNode = ((PDGStatementNode) entry.getKey());
+			category = statementNode.core.getCategory().toString();
+		} else if(entry.getKey() instanceof PDGExpressionNode) {
+			PDGStatementNode statementNode = ((PDGStatementNode) entry.getKey());
+			category = statementNode.core.getCategory().toString();
+		}
+
+		return category;
 	}
 
 	static private List<File> getFiles(final File file) {

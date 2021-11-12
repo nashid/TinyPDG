@@ -108,4 +108,5 @@ public abstract class PDGNode<T extends ProgramElementInfo> implements
 		text.append(">");
 		return text.toString();
 	}
+
 }
