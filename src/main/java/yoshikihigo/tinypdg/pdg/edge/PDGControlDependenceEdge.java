@@ -38,6 +38,6 @@ public class PDGControlDependenceEdge extends PDGEdge {
 
 	@Override
 	public String getDependenceString() {
-		return this.trueDependence ? "true" : "false";
+		return this.trueDependence ? "ControlFlowNext(true)" : "ControlFlowNext(false)";
 	}
 }
