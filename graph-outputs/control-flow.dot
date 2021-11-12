@@ -1,0 +1,30 @@
+digraph CFG {
+subgraph cluster0 {
+label = "ifElseMethod <2...19>";
+0.0 [style = filled, label = "String time = \"\"; <3>", fillcolor = aquamarine, shape = ellipse];
+0.1 [style = filled, label = "hour < 12 <5>", fillcolor = white, shape = diamond];
+0.2 [style = filled, label = "time = \"morning\"; <6>", fillcolor = white, shape = ellipse];
+0.3 [style = filled, label = "System.out.println(\"morning.\"); <7>", fillcolor = white, shape = ellipse];
+0.4 [style = filled, label = "hour < 18 <8>", fillcolor = white, shape = diamond];
+0.5 [style = filled, label = "time = \"noon\"; <9>", fillcolor = white, shape = ellipse];
+0.6 [style = filled, label = "System.out.println(\"noon.\"); <10>", fillcolor = white, shape = ellipse];
+0.7 [style = filled, label = "time = \"night\"; <12>", fillcolor = white, shape = ellipse];
+0.8 [style = filled, label = "System.out.println(\"night.\"); <13>", fillcolor = white, shape = ellipse];
+0.9 [style = filled, label = "String prefix = \"good\"; <16>", fillcolor = white, shape = ellipse];
+0.10 [style = filled, label = "time = prefix + \" \" + time; <17>", fillcolor = white, shape = ellipse];
+0.11 [style = filled, label = "return time; <18>", fillcolor = deeppink, shape = ellipse];
+0.0 -> 0.1 [style = solid, label=""];
+0.1 -> 0.2 [style = solid, label="true"];
+0.1 -> 0.4 [style = solid, label="false"];
+0.2 -> 0.3 [style = solid, label=""];
+0.3 -> 0.9 [style = solid, label=""];
+0.4 -> 0.5 [style = solid, label="true"];
+0.4 -> 0.7 [style = solid, label="false"];
+0.5 -> 0.6 [style = solid, label=""];
+0.6 -> 0.9 [style = solid, label=""];
+0.7 -> 0.8 [style = solid, label=""];
+0.8 -> 0.9 [style = solid, label=""];
+0.9 -> 0.10 [style = solid, label=""];
+0.10 -> 0.11 [style = solid, label=""];
+}
+}
