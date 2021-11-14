@@ -1,4 +1,4 @@
-public class BasicIfElse {
+public class VerySimpleIfElseForDebugging {
     String basicIfElseMethod(int hour) {
         String time = "";
 

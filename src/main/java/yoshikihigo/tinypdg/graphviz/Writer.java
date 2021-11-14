@@ -20,6 +20,7 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.PosixParser;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 
+import org.eclipse.jdt.core.dom.TypeDeclarationStatement;
 import yoshikihigo.tinypdg.ast.TinyPDGASTVisitor;
 import yoshikihigo.tinypdg.cfg.CFG;
 import yoshikihigo.tinypdg.cfg.edge.CFGEdge;
@@ -345,6 +346,9 @@ public class Writer {
 			PDGStatementNode statementNode = ((PDGStatementNode) entry.getKey());
 			category = statementNode.core.getCategory().toString();
 		} else if(entry.getKey() instanceof PDGExpressionNode) {
+			PDGStatementNode statementNode = ((PDGStatementNode) entry.getKey());
+			category = statementNode.core.getCategory().toString();
+		} if(entry.getKey() instanceof PDGNormalNode) {
 			PDGStatementNode statementNode = ((PDGStatementNode) entry.getKey());
 			category = statementNode.core.getCategory().toString();
 		}

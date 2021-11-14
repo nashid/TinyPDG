@@ -1,0 +1,47 @@
+digraph {
+subgraph cluster0 {
+label = "bacicIfElseMethod <2...16>";
+0.7 [style = filled, label = "System.out.println(\"night.\"); <10> , category = Expression", fillcolor = white, shape = ellipse];
+0.5 [style = filled, label = "hour < 18 <8> , category = ", fillcolor = white, shape = diamond];
+0.9 [style = filled, label = "time = prefix + \" \" + time; <14> , category = Expression", fillcolor = white, shape = ellipse];
+0.11 [style = filled, label = "Enter <2...16> , category = ", fillcolor = aquamarine, shape = diamond];
+0.1 [style = filled, label = "String time = \"\"; <3> , category = VariableDeclaration", fillcolor = white, shape = ellipse];
+0.3 [style = filled, label = "time = \"day\"; <6> , category = Expression", fillcolor = white, shape = ellipse];
+0.10 [style = filled, label = "return time; <15> , category = Return", fillcolor = deeppink, shape = ellipse];
+0.6 [style = filled, label = "time = \"night\"; <9> , category = Expression", fillcolor = white, shape = ellipse];
+0.4 [style = filled, label = "System.out.println(\"day.\"); <7> , category = Expression", fillcolor = white, shape = ellipse];
+0.2 [style = filled, label = "hour < 18 <5> , category = ", fillcolor = white, shape = diamond];
+0.0 [style = filled, label = "int hour <2> , category = ", fillcolor = tomato, shape = box];
+0.8 [style = filled, label = "String prefix = \"good\"; <13> , category = VariableDeclaration", fillcolor = white, shape = ellipse];
+0.0 -> 0.2 [style = solid, label="hour"];
+0.0 -> 0.5 [style = solid, label="hour"];
+0.1 -> 0.2 [style = bold, label=""];
+0.1 -> 0.9 [style = solid, label="time"];
+0.2 -> 0.3 [style = dotted, label="ControlFlowNext(true)"];
+0.2 -> 0.3 [style = bold, label=""];
+0.2 -> 0.4 [style = dotted, label="ControlFlowNext(true)"];
+0.2 -> 0.5 [style = dotted, label="ControlFlowNext(false)"];
+0.2 -> 0.5 [style = bold, label=""];
+0.3 -> 0.4 [style = bold, label=""];
+0.3 -> 0.9 [style = solid, label="time"];
+0.4 -> 0.8 [style = bold, label=""];
+0.5 -> 0.6 [style = dotted, label="ControlFlowNext(true)"];
+0.5 -> 0.6 [style = bold, label=""];
+0.5 -> 0.7 [style = dotted, label="ControlFlowNext(true)"];
+0.5 -> 0.8 [style = bold, label=""];
+0.6 -> 0.7 [style = bold, label=""];
+0.6 -> 0.9 [style = solid, label="time"];
+0.7 -> 0.8 [style = bold, label=""];
+0.8 -> 0.9 [style = solid, label="prefix"];
+0.8 -> 0.9 [style = bold, label=""];
+0.9 -> 0.10 [style = solid, label="time"];
+0.9 -> 0.10 [style = bold, label=""];
+0.11 -> 0.0 [style = dotted, label="ControlFlowNext(true)"];
+0.11 -> 0.1 [style = dotted, label="ControlFlowNext(true)"];
+0.11 -> 0.1 [style = bold, label=""];
+0.11 -> 0.2 [style = dotted, label="ControlFlowNext(true)"];
+0.11 -> 0.8 [style = dotted, label="ControlFlowNext(true)"];
+0.11 -> 0.9 [style = dotted, label="ControlFlowNext(true)"];
+0.11 -> 0.10 [style = dotted, label="ControlFlowNext(true)"];
+}
+}
