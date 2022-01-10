@@ -282,13 +282,14 @@ public class Writer {
 			writer.write(".");
 			writer.write(Integer.toString(entry.getValue()));
 			writer.write(" [style = filled, label = \"");
-
-			String nodeInfo = entry.getKey().getText();
-			String category = getCategory(entry);
-			nodeInfo = nodeInfo + " " + ", category = " + category;
-
-			writer.write(nodeInfo.replace("\"", "\\\"")
+			writer.write(entry.getKey().getText().replace("\"", "\\\"")
 					.replace("\\\\\"", "\\\\\\\""));
+
+			// String nodeInfo = entry.getKey().getText();
+			// String category = getCategory(entry);
+			// nodeInfo = nodeInfo + " " + ", category = " + category;
+			// writer.write(nodeInfo.replace("\"", "\\\"").replace("\\\\\"", "\\\\\\\""));
+
 			writer.write("\"");
 
 			final PDGNode<?> node = entry.getKey();
